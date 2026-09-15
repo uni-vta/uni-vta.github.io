@@ -8,6 +8,8 @@
   <meta property="og:title" content="UVTA — Unified Visual-Tactile-Action Modeling">
   <meta property="og:description" content="Learning contact-aware dexterous manipulation from human tactile demonstrations.">
   <meta property="og:image" content="static/images/teaser.jpg">
+  <meta property="og:url" content="https://uni-vta.github.io/">
+  <link rel="canonical" href="https://uni-vta.github.io/">
   <meta name="twitter:card" content="summary_large_image">
   <title>UVTA — Unified Visual-Tactile-Action Modeling</title>
   <link rel="icon" href="static/images/favicon.png">
@@ -22,9 +24,9 @@
     <div class="nav-inner">
       <a class="brand" href="#top" aria-label="UVTA home"><span class="brand-mark"><i></i><i></i><i></i></span><span>UVTA</span></a>
       <nav class="nav-links" id="navLinks" aria-label="Page sections">
-        <a href="#overview">Overview</a><a href="#system">Data</a><a href="#method">Method</a><a href="#demos">Demos</a><a href="#results">Results</a><a href="#citation">Citation</a>
+        <a href="#overview">Overview</a><a href="#system">Data</a><a href="#method">Method</a><a href="#video">Demos</a><a href="#results">Results</a><a href="#citation">Citation</a>
       </nav>
-      <a class="nav-github" href="https://github.com/Chopper-233/UVTA-project" target="_blank" rel="noopener">GitHub</a>
+      <a class="nav-github" href="https://github.com/uni-vta/uni-vta.github.io" target="_blank" rel="noopener">GitHub</a>
       <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation" aria-expanded="false"><span></span><span></span></button>
     </div>
   </header>
@@ -38,8 +40,8 @@
         <p class="authors reveal">Wenqiao Li · Qianyou Zhao · Jiawen Hao · Tengyu Liu · Kaifeng Zhang · Siyuan Huang · Chuan Wen</p>
         <div class="hero-actions reveal">
           <span class="button disabled" title="The paper will be linked after public release">Paper · Coming soon</span>
-          <a class="button secondary" href="https://github.com/Chopper-233/UVTA-project" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 .7A11.3 11.3 0 0 0 8.4 22.8c.6.1.8-.2.8-.6v-2.1c-3.4.7-4.1-1.4-4.1-1.4-.5-1.4-1.3-1.7-1.3-1.7-1.1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1 1.8 2.7 1.3 3.4 1 .1-.8.4-1.3.7-1.6-2.7-.3-5.5-1.3-5.5-5.6 0-1.3.5-2.3 1.2-3.1-.1-.3-.5-1.6.1-3.1 0 0 1-.3 3.1 1.2a10.7 10.7 0 0 1 5.7 0C16.1 5 17.1 5.3 17.1 5.3c.6 1.5.2 2.8.1 3.1.7.8 1.2 1.8 1.2 3.1 0 4.3-2.8 5.3-5.5 5.6.4.4.8 1.1.8 2.1v3c0 .4.2.7.8.6A11.3 11.3 0 0 0 12 .7Z"/></svg>Project repository</a>
-          <a class="button ghost" href="#demos">Watch demos <span>↓</span></a>
+          <a class="button secondary" href="https://github.com/uni-vta/uni-vta.github.io" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 .7A11.3 11.3 0 0 0 8.4 22.8c.6.1.8-.2.8-.6v-2.1c-3.4.7-4.1-1.4-4.1-1.4-.5-1.4-1.3-1.7-1.3-1.7-1.1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1 1.8 2.7 1.3 3.4 1 .1-.8.4-1.3.7-1.6-2.7-.3-5.5-1.3-5.5-5.6 0-1.3.5-2.3 1.2-3.1-.1-.3-.5-1.6.1-3.1 0 0 1-.3 3.1 1.2a10.7 10.7 0 0 1 5.7 0C16.1 5 17.1 5.3 17.1 5.3c.6 1.5.2 2.8.1 3.1.7.8 1.2 1.8 1.2 3.1 0 4.3-2.8 5.3-5.5 5.6.4.4.8 1.1.8 2.1v3c0 .4.2.7.8.6A11.3 11.3 0 0 0 12 .7Z"/></svg>Project repository</a>
+          <a class="button ghost" href="#video">Watch demos <span>↓</span></a>
         </div>
         <figure class="hero-figure reveal"><img src="static/images/teaser.jpg" alt="UVTA aligns human and robot interactions through a shared tactile representation"></figure>
         <div class="stats reveal" aria-label="UVTA key numbers"><div><strong>5</strong><span>contact-rich tasks</span></div><div><strong>1,000</strong><span>human demos per task</span></div><div><strong>150</strong><span>robot demos per task</span></div><div><strong>70%</strong><span>average task score</span></div></div>
@@ -66,7 +68,7 @@
         <div class="method-notes"><article class="reveal"><b>404-D interaction token</b><p>Early fusion connects wrist vision with contact measurements before downstream prediction.</p></article><article class="reveal"><b>Diffusion action head</b><p>Generates a 16-step chunk of relative wrist and absolute finger-joint actions.</p></article><article class="reveal"><b>Tactile world head</b><p>Predicts the complete future tactile trajectory and shapes the shared encoder with physical consequences.</p></article></div>
       </div>
     </section>
-    <section class="section demos-section" id="demos">
+    <section class="section demos-section" id="video">
       <div class="container">
         <div class="section-head light reveal"><div><p class="eyebrow">Real-robot demos</p><h2>Contact-aware dexterity across five tasks</h2></div><p>Each clip combines the external camera, wrist view, and fingertip tactile response. Videos play automatically when they enter the viewport.</p></div>
         <div class="demo-grid">

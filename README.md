@@ -4,6 +4,10 @@ Project website for **Unified Visual-Tactile-Action Modeling from Human Demonstr
 
 The site is static and deploys directly with GitHub Pages from the repository root.
 
+Live site: <https://uni-vta.github.io/>
+
+Demo section: <https://uni-vta.github.io/#video>
+
 ## Local preview
 
 ```bash
