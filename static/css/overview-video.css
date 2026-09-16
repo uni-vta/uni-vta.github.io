@@ -1,0 +1,28 @@
+.overview-video-section {
+  padding-top: 92px;
+  background: var(--tint);
+}
+
+.overview-video {
+  margin: 0;
+  overflow: hidden;
+  border: 1px solid #cfd8e2;
+  border-radius: 24px;
+  background: #08111c;
+  box-shadow: 0 24px 70px rgba(25, 43, 65, 0.18);
+}
+
+.overview-video video {
+  aspect-ratio: 16 / 9;
+  background: #08111c;
+}
+
+@media (max-width: 560px) {
+  .overview-video-section {
+    padding-top: 70px;
+  }
+
+  .overview-video {
+    border-radius: 15px;
+  }
+}

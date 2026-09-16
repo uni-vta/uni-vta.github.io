@@ -17,6 +17,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="static/css/style.css">
+  <link rel="stylesheet" href="static/css/overview-video.css">
 </head>
 <body>
   <div class="progress" aria-hidden="true"><span id="progressBar"></span></div>
@@ -47,7 +48,21 @@
         <div class="stats reveal" aria-label="UVTA key numbers"><div><strong>5</strong><span>contact-rich tasks</span></div><div><strong>1,000</strong><span>human demos per task</span></div><div><strong>150</strong><span>robot demos per task</span></div><div><strong>70%</strong><span>average task score</span></div></div>
       </div>
     </section>
-    <section class="section" id="overview">
+    <section class="section overview-video-section" id="overview">
+      <div class="container">
+        <div class="section-head reveal">
+          <div><p class="eyebrow">Video overview</p><h2>UVTA in 105 seconds</h2></div>
+          <p>From autonomous robot demonstrations to the motivation, tactile motion-capture system, human data, unified model, and experimental results.</p>
+        </div>
+        <figure class="overview-video reveal">
+          <video controls playsinline preload="metadata" poster="static/images/overview-poster.jpg" aria-label="UVTA project overview video">
+            <source src="static/videos/uvta-overview.mp4" type="video/mp4">
+            Your browser does not support embedded MP4 video.
+          </video>
+        </figure>
+      </div>
+    </section>
+    <section class="section" id="motivation">
       <div class="container narrow">
         <p class="eyebrow reveal">Motivation</p><h2 class="reveal">Scale the interaction, not the embodiment.</h2>
         <p class="lead reveal">Tactile feedback is essential for contact-rich dexterity, yet robot tactile demonstrations are expensive to collect at scale. UVTA uses wearable human tactile motion capture to gather diverse physical interactions, then learns a shared representation that connects human contact experience to robot action.</p>
