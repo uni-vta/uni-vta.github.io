@@ -28,10 +28,22 @@ document.addEventListener('DOMContentLoaded', () => {
     document.body.classList.toggle('past-splash', window.scrollY > splash.offsetHeight * 0.78);
   }
 
-  video.addEventListener('loadeddata', () => {
+  function startVideo() {
     splash.classList.add('video-ready');
+    video.muted = true;
     video.play().catch(() => {});
     updateClipLabel();
+  }
+
+  if (video.readyState >= HTMLMediaElement.HAVE_CURRENT_DATA) {
+    startVideo();
+  } else {
+    video.addEventListener('loadeddata', startVideo, { once: true });
+    video.addEventListener('canplay', startVideo, { once: true });
+  }
+
+  splash.addEventListener('pointerdown', () => {
+    if (video.paused) startVideo();
   });
   video.addEventListener('timeupdate', updateClipLabel);
   video.addEventListener('seeked', updateClipLabel);

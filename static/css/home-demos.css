@@ -5,7 +5,7 @@
   height: 100svh;
   min-height: 620px;
   overflow: hidden;
-  background: #10151c;
+  background: #10151c url('../images/posters/flip-page.jpg') center / cover no-repeat;
   color: #fff;
 }
 
@@ -16,7 +16,7 @@
   height: 100%;
   object-fit: cover;
   object-position: center;
-  opacity: 0;
+  opacity: 1;
   transition: opacity 0.8s ease;
 }
 
