@@ -17,6 +17,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="static/css/style.css">
+  <link rel="stylesheet" href="static/css/home-demos.css">
 </head>
 <body>
   <div class="progress" aria-hidden="true"><span id="progressBar"></span></div>
@@ -43,7 +44,16 @@
           <a class="button secondary" href="https://github.com/uni-vta/uni-vta.github.io" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 .7A11.3 11.3 0 0 0 8.4 22.8c.6.1.8-.2.8-.6v-2.1c-3.4.7-4.1-1.4-4.1-1.4-.5-1.4-1.3-1.7-1.3-1.7-1.1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1 1.8 2.7 1.3 3.4 1 .1-.8.4-1.3.7-1.6-2.7-.3-5.5-1.3-5.5-5.6 0-1.3.5-2.3 1.2-3.1-.1-.3-.5-1.6.1-3.1 0 0 1-.3 3.1 1.2a10.7 10.7 0 0 1 5.7 0C16.1 5 17.1 5.3 17.1 5.3c.6 1.5.2 2.8.1 3.1.7.8 1.2 1.8 1.2 3.1 0 4.3-2.8 5.3-5.5 5.6.4.4.8 1.1.8 2.1v3c0 .4.2.7.8.6A11.3 11.3 0 0 0 12 .7Z"/></svg>Project repository</a>
           <a class="button ghost" href="#video">Watch demos <span>↓</span></a>
         </div>
-        <figure class="hero-figure reveal"><img src="static/images/teaser.jpg" alt="UVTA aligns human and robot interactions through a shared tactile representation"></figure>
+        <div class="hero-demos reveal" id="video">
+          <div class="hero-demos-head"><div><span>Real-robot rollouts</span><h2>Five contact-rich tasks</h2></div><p>Agent view only · autonomous policy execution</p></div>
+          <div class="hero-video-grid">
+            <article class="hero-video-card"><div class="hero-video-frame"><video class="scroll-video" poster="static/images/posters/flip-page.jpg" muted autoplay loop playsinline preload="metadata"><source src="static/videos/flip-page.mp4" type="video/mp4"></video><span class="play-mark">▶</span><span class="speed-badge">1×</span></div><h3>Flip Page</h3></article>
+            <article class="hero-video-card"><div class="hero-video-frame"><video class="scroll-video" poster="static/images/posters/light-bulb.jpg" muted autoplay loop playsinline preload="metadata"><source src="static/videos/light-bulb.mp4" type="video/mp4"></video><span class="play-mark">▶</span><span class="speed-badge">2×</span></div><h3>Screw Light Bulb</h3></article>
+            <article class="hero-video-card"><div class="hero-video-frame"><video class="scroll-video" poster="static/images/posters/toggle-switch.jpg" muted autoplay loop playsinline preload="metadata"><source src="static/videos/toggle-switch.mp4" type="video/mp4"></video><span class="play-mark">▶</span><span class="speed-badge">2×</span></div><h3>Toggle Switch</h3></article>
+            <article class="hero-video-card"><div class="hero-video-frame"><video class="scroll-video" poster="static/images/posters/ball-classification.jpg" muted autoplay loop playsinline preload="metadata"><source src="static/videos/ball-classification.mp4" type="video/mp4"></video><span class="play-mark">▶</span><span class="speed-badge">2×</span></div><h3>Ball Classification</h3></article>
+            <article class="hero-video-card"><div class="hero-video-frame"><video class="scroll-video" poster="static/images/posters/liquid-transfer.jpg" muted autoplay loop playsinline preload="metadata"><source src="static/videos/liquid-transfer.mp4" type="video/mp4"></video><span class="play-mark">▶</span><span class="speed-badge">2×</span></div><h3>Liquid Transfer</h3></article>
+          </div>
+        </div>
         <div class="stats reveal" aria-label="UVTA key numbers"><div><strong>5</strong><span>contact-rich tasks</span></div><div><strong>1,000</strong><span>human demos per task</span></div><div><strong>150</strong><span>robot demos per task</span></div><div><strong>70%</strong><span>average task score</span></div></div>
       </div>
     </section>
@@ -51,6 +61,7 @@
       <div class="container narrow">
         <p class="eyebrow reveal">Motivation</p><h2 class="reveal">Scale the interaction, not the embodiment.</h2>
         <p class="lead reveal">Tactile feedback is essential for contact-rich dexterity, yet robot tactile demonstrations are expensive to collect at scale. UVTA uses wearable human tactile motion capture to gather diverse physical interactions, then learns a shared representation that connects human contact experience to robot action.</p>
+        <figure class="hero-figure overview-teaser reveal"><img src="static/images/teaser.jpg" alt="UVTA aligns human and robot interactions through a universal interaction representation"></figure>
         <div class="idea-grid"><article class="idea reveal"><span>01</span><h3>Capture</h3><p>Record wrist-centric vision, fingertip pressure, and hand motion without placing a robot in the collection loop.</p></article><article class="idea reveal"><span>02</span><h3>Align</h3><p>Map human and robot trajectories into common tactile and action spaces across different hand embodiments.</p></article><article class="idea reveal"><span>03</span><h3>Co-train</h3><p>Jointly predict future actions and tactile trajectories so human touch supervises contact-aware representation learning.</p></article></div>
       </div>
     </section>
@@ -66,18 +77,6 @@
         <div class="section-head reveal"><div><p class="eyebrow">Method</p><h2>One interaction representation, two predictions</h2></div><p>UVTA fuses a 384-D visual token with a 20-D tactile token and supervises the shared representation through both action diffusion and future-tactile prediction.</p></div>
         <figure class="paper-figure method-figure reveal"><img src="static/images/method.jpg" alt="Unified Visual-Tactile-Action model architecture"></figure>
         <div class="method-notes"><article class="reveal"><b>404-D interaction token</b><p>Early fusion connects wrist vision with contact measurements before downstream prediction.</p></article><article class="reveal"><b>Diffusion action head</b><p>Generates a 16-step chunk of relative wrist and absolute finger-joint actions.</p></article><article class="reveal"><b>Tactile world head</b><p>Predicts the complete future tactile trajectory and shapes the shared encoder with physical consequences.</p></article></div>
-      </div>
-    </section>
-    <section class="section demos-section" id="video">
-      <div class="container">
-        <div class="section-head light reveal"><div><p class="eyebrow">Real-robot demos</p><h2>Contact-aware dexterity across five tasks</h2></div><p>Each clip combines the external camera, wrist view, and fingertip tactile response. Videos play automatically when they enter the viewport.</p></div>
-        <div class="demo-grid">
-          <article class="demo-card featured reveal"><div class="video-wrap"><video class="scroll-video" poster="static/images/posters/flip-page.jpg" muted loop playsinline preload="metadata"><source src="static/videos/flip-page.mp4" type="video/mp4"></video><span class="play-mark">▶</span></div><div class="demo-caption"><span>01</span><div><h3>Flip Page</h3><p>Rub, separate, and turn a single page.</p></div><b>83</b></div></article>
-          <article class="demo-card reveal"><div class="video-wrap"><video class="scroll-video" poster="static/images/posters/light-bulb.jpg" muted loop playsinline preload="metadata"><source src="static/videos/light-bulb.mp4" type="video/mp4"></video><span class="play-mark">▶</span></div><div class="demo-caption"><span>02</span><div><h3>Screw Light Bulb</h3><p>Coordinate wrist rotation and fingertip contact.</p></div><b>80</b></div></article>
-          <article class="demo-card reveal"><div class="video-wrap"><video class="scroll-video" poster="static/images/posters/toggle-switch.jpg" muted loop playsinline preload="metadata"><source src="static/videos/toggle-switch.mp4" type="video/mp4"></video><span class="play-mark">▶</span></div><div class="demo-caption"><span>03</span><div><h3>Toggle Switch</h3><p>Stabilize the breaker and actuate the switch.</p></div><b>88</b></div></article>
-          <article class="demo-card reveal"><div class="video-wrap"><video class="scroll-video" poster="static/images/posters/ball-classification.jpg" muted loop playsinline preload="metadata"><source src="static/videos/ball-classification.mp4" type="video/mp4"></video><span class="play-mark">▶</span></div><div class="demo-caption"><span>04</span><div><h3>Ball Classification</h3><p>Distinguish visually similar materials through touch.</p></div><b>56</b></div></article>
-          <article class="demo-card reveal"><div class="video-wrap"><video class="scroll-video" poster="static/images/posters/liquid-transfer.jpg" muted loop playsinline preload="metadata"><source src="static/videos/liquid-transfer.mp4" type="video/mp4"></video><span class="play-mark">▶</span></div><div class="demo-caption"><span>05</span><div><h3>Liquid Transfer</h3><p>Draw, move, and dispense liquid with a dropper.</p></div><b>44</b></div></article>
-        </div><p class="score-note reveal">Numbers denote the stage-wise task score (%) reported in the paper.</p>
       </div>
     </section>
     <section class="section tinted" id="results">

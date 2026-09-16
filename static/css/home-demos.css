@@ -1,0 +1,147 @@
+.hero-demos {
+  scroll-margin-top: 86px;
+  margin: 8px auto 0;
+  padding: 22px;
+  border: 1px solid #d9e0e8;
+  border-radius: 28px;
+  background: rgba(255, 255, 255, 0.82);
+  box-shadow: 0 28px 80px rgba(35, 54, 78, 0.14);
+  backdrop-filter: blur(12px);
+}
+
+.hero-demos-head {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  gap: 24px;
+  padding: 1px 3px 17px;
+  text-align: left;
+}
+
+.hero-demos-head span {
+  color: var(--blue);
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+}
+
+.hero-demos-head h2 {
+  margin: 3px 0 0;
+  font: 800 25px/1.2 "Manrope", sans-serif;
+  letter-spacing: -0.025em;
+}
+
+.hero-demos-head p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 13px;
+}
+
+.hero-video-grid {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 10px;
+}
+
+.hero-video-card {
+  min-width: 0;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  border-radius: 15px;
+  background: #fff;
+}
+
+.hero-video-frame {
+  position: relative;
+  overflow: hidden;
+  aspect-ratio: 32 / 27;
+  background: #111820;
+  cursor: pointer;
+}
+
+.hero-video-frame video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.hero-video-frame .play-mark {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  display: grid;
+  width: 40px;
+  height: 40px;
+  padding-left: 2px;
+  place-items: center;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.9);
+  color: var(--ink);
+  font-size: 13px;
+  transform: translate(-50%, -50%);
+  transition: opacity 0.2s ease;
+}
+
+.hero-video-frame.playing .play-mark {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.speed-badge {
+  position: absolute;
+  right: 8px;
+  bottom: 8px;
+  padding: 3px 7px;
+  border: 1px solid rgba(255, 255, 255, 0.24);
+  border-radius: 999px;
+  background: rgba(9, 14, 21, 0.64);
+  color: #fff;
+  font: 700 10px "Manrope", sans-serif;
+  backdrop-filter: blur(6px);
+}
+
+.hero-video-card h3 {
+  overflow: hidden;
+  margin: 0;
+  padding: 11px 10px 12px;
+  font: 700 13px/1.25 "Manrope", sans-serif;
+  text-align: left;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.overview-teaser {
+  margin-top: 42px;
+}
+
+@media (max-width: 1000px) {
+  .hero-video-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 680px) {
+  .hero-demos {
+    padding: 14px;
+    border-radius: 18px;
+  }
+
+  .hero-demos-head {
+    display: block;
+  }
+
+  .hero-demos-head p {
+    margin-top: 5px;
+  }
+
+  .hero-video-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 430px) {
+  .hero-video-grid {
+    grid-template-columns: 1fr;
+  }
+}
