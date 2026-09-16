@@ -19,7 +19,7 @@
   <link rel="stylesheet" href="static/css/style.css">
   <link rel="stylesheet" href="static/css/home-demos.css">
 </head>
-<body>
+<body class="has-video-splash">
   <div class="progress" aria-hidden="true"><span id="progressBar"></span></div>
   <header class="nav" id="siteNav">
     <div class="nav-inner">
@@ -32,7 +32,20 @@
     </div>
   </header>
   <main id="top">
-    <section class="hero">
+    <section class="video-splash" id="video" aria-label="UVTA real-robot demonstrations">
+      <video id="splashVideo" autoplay loop muted playsinline preload="auto" poster="static/images/posters/flip-page.jpg">
+        <source src="static/videos/full-screen.mp4" type="video/mp4">
+      </video>
+      <div class="splash-shade" aria-hidden="true"></div>
+      <div class="splash-status" aria-live="polite"><span id="splashTask">Flip Page</span><span id="splashSpeed">1× Speed</span></div>
+      <div class="splash-copy">
+        <p>UVTA</p>
+        <h1>Unified Visual-Tactile-Action Modeling from Human Demonstrations</h1>
+        <span>Hands can change. The physics of interaction does not.</span>
+      </div>
+      <a class="splash-scroll" href="#paper" aria-label="Scroll to paper information"><span>Explore UVTA</span><i></i></a>
+    </section>
+    <section class="hero" id="paper">
       <div class="orb orb-a"></div><div class="orb orb-b"></div>
       <div class="container hero-copy">
         <p class="kicker reveal">Dexterous manipulation from scalable human touch</p>
@@ -42,17 +55,7 @@
         <div class="hero-actions reveal">
           <span class="button disabled" title="The paper will be linked after public release">Paper · Coming soon</span>
           <a class="button secondary" href="https://github.com/uni-vta/uni-vta.github.io" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 .7A11.3 11.3 0 0 0 8.4 22.8c.6.1.8-.2.8-.6v-2.1c-3.4.7-4.1-1.4-4.1-1.4-.5-1.4-1.3-1.7-1.3-1.7-1.1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1 1.8 2.7 1.3 3.4 1 .1-.8.4-1.3.7-1.6-2.7-.3-5.5-1.3-5.5-5.6 0-1.3.5-2.3 1.2-3.1-.1-.3-.5-1.6.1-3.1 0 0 1-.3 3.1 1.2a10.7 10.7 0 0 1 5.7 0C16.1 5 17.1 5.3 17.1 5.3c.6 1.5.2 2.8.1 3.1.7.8 1.2 1.8 1.2 3.1 0 4.3-2.8 5.3-5.5 5.6.4.4.8 1.1.8 2.1v3c0 .4.2.7.8.6A11.3 11.3 0 0 0 12 .7Z"/></svg>Project repository</a>
-          <a class="button ghost" href="#video">Watch demos <span>↓</span></a>
-        </div>
-        <div class="hero-demos reveal" id="video">
-          <div class="hero-demos-head"><div><span>Real-robot rollouts</span><h2>Five contact-rich tasks</h2></div><p>Agent view only · autonomous policy execution</p></div>
-          <div class="hero-video-grid">
-            <article class="hero-video-card"><div class="hero-video-frame"><video class="scroll-video" poster="static/images/posters/flip-page.jpg" muted autoplay loop playsinline preload="metadata"><source src="static/videos/flip-page.mp4" type="video/mp4"></video><span class="play-mark">▶</span><span class="speed-badge">1×</span></div><h3>Flip Page</h3></article>
-            <article class="hero-video-card"><div class="hero-video-frame"><video class="scroll-video" poster="static/images/posters/light-bulb.jpg" muted autoplay loop playsinline preload="metadata"><source src="static/videos/light-bulb.mp4" type="video/mp4"></video><span class="play-mark">▶</span><span class="speed-badge">2×</span></div><h3>Screw Light Bulb</h3></article>
-            <article class="hero-video-card"><div class="hero-video-frame"><video class="scroll-video" poster="static/images/posters/toggle-switch.jpg" muted autoplay loop playsinline preload="metadata"><source src="static/videos/toggle-switch.mp4" type="video/mp4"></video><span class="play-mark">▶</span><span class="speed-badge">2×</span></div><h3>Toggle Switch</h3></article>
-            <article class="hero-video-card"><div class="hero-video-frame"><video class="scroll-video" poster="static/images/posters/ball-classification.jpg" muted autoplay loop playsinline preload="metadata"><source src="static/videos/ball-classification.mp4" type="video/mp4"></video><span class="play-mark">▶</span><span class="speed-badge">2×</span></div><h3>Ball Classification</h3></article>
-            <article class="hero-video-card"><div class="hero-video-frame"><video class="scroll-video" poster="static/images/posters/liquid-transfer.jpg" muted autoplay loop playsinline preload="metadata"><source src="static/videos/liquid-transfer.mp4" type="video/mp4"></video><span class="play-mark">▶</span><span class="speed-badge">2×</span></div><h3>Liquid Transfer</h3></article>
-          </div>
+          <a class="button ghost" href="#video">Replay demos <span>↑</span></a>
         </div>
         <div class="stats reveal" aria-label="UVTA key numbers"><div><strong>5</strong><span>contact-rich tasks</span></div><div><strong>1,000</strong><span>human demos per task</span></div><div><strong>150</strong><span>robot demos per task</span></div><div><strong>70%</strong><span>average task score</span></div></div>
       </div>
@@ -91,6 +94,7 @@
     </section>
   </main>
   <footer><div class="container"><span>UVTA · Unified Visual-Tactile-Action Modeling</span><span>Built for research communication · 2026</span></div></footer>
+  <script src="static/js/splash-video.js"></script>
   <script src="static/js/main.js"></script>
 </body>
 </html>
