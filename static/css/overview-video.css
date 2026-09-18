@@ -12,6 +12,18 @@
   background: #08111c;
 }
 
+@media (min-width: 851px) {
+  .hero .container {
+    width: min(1440px, calc(100% - 48px));
+  }
+
+  .hero .stats {
+    max-width: 1180px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
 @media (max-width: 560px) {
   .overview-video {
     border-radius: 15px;
