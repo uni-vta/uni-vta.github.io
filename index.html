@@ -16,7 +16,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="static/css/editorial-v29.css">
+  <link rel="stylesheet" href="static/css/editorial-v30.css">
 </head>
 <body>
   <div class="progress" aria-hidden="true"><span id="progressBar"></span></div>
@@ -24,7 +24,7 @@
     <div class="nav-inner">
       <a class="brand" href="#top" aria-label="UVTA home"><span class="brand-mark"><i></i><i></i><i></i></span><span>UVTA</span></a>
       <nav class="nav-links" id="navLinks" aria-label="Page sections">
-        <a href="#overview">Overview</a><a href="#motivation">Motivation</a><a href="#system">System &amp; Dataset</a><a href="#method">Model</a><a href="#video">Demos</a><a href="#results">Results</a><a href="#outlook">Outlook</a>
+        <a href="#overview">Overview</a><a href="#motivation">Motivation</a><a href="#system">System &amp; Dataset</a><a href="#method">Model</a><a href="#video">Demos</a><a href="#generalization">Generalization</a><a href="#results">Results</a><a href="#outlook">Outlook</a>
       </nav>
       <a class="nav-github" href="https://github.com/uni-vta/uni-vta.github.io" target="_blank" rel="noopener">GitHub</a>
       <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation" aria-expanded="false"><span></span><span></span></button>
@@ -95,25 +95,35 @@
           <button id="tab-tube" role="tab" aria-selected="false" aria-controls="demo-panel" tabindex="-1" data-demo="tube">Liquid Transfer</button>
           <button id="tab-ball_hard" role="tab" aria-selected="false" aria-controls="demo-panel" tabindex="-1" data-demo="ball_hard">Hard Ball</button>
           <button id="tab-ball_soft" role="tab" aria-selected="false" aria-controls="demo-panel" tabindex="-1" data-demo="ball_soft">Soft Ball</button>
-          <button id="tab-book2" role="tab" aria-selected="false" aria-controls="demo-panel" tabindex="-1" data-demo="book2">Generalization Test</button>
         </div>
         <div class="demo-stage reveal" id="demo-panel" role="tabpanel" aria-labelledby="tab-book1">
-          <video id="multiview-demo" controls muted loop playsinline preload="metadata" poster="static/images/multiview/book1.jpg" aria-label="Flip Page: synchronized robot views and tactile visualization"><source src="static/videos/multiview/book1.mp4" type="video/mp4"></video>
-          <div class="demo-caption"><div><h3 id="demo-title">Flip Page</h3><p id="demo-description">Rub, separate, and turn a single page.</p></div><span class="playback-note" id="demo-speed">1× real-time duration</span></div>
+          <video id="multiview-demo" class="demo-player" controls muted loop playsinline preload="metadata" poster="static/images/multiview-v30/book1.jpg" aria-describedby="demo-description demo-speed" aria-label="Flip Page: synchronized robot views and tactile visualization"><source src="static/videos/multiview-v30/book1.mp4" type="video/mp4"></video>
+          <div class="demo-caption" aria-live="polite" aria-atomic="true"><div><p class="task-eyebrow" id="demo-task">Task I / Page separation and turning</p><h3 id="demo-title">Flip Page</h3><p id="demo-description">The robot approaches the book, slows down near the page, and coordinates its fingers to rub and separate a single page before turning it to the left.</p></div></div>
+          <span class="sr-only" id="demo-speed">Playback speed: 1× real time.</span>
         </div>
-        <p class="demo-footnote">Touch panels show recorded sensor visualizations, not generated signals. Playback speed is indicated for each clip.</p>
+        <p class="demo-footnote">Task descriptions follow the paper’s experimental setup. Touch panels show recorded sensor visualizations. Playback speed appears at the top right of each video.</p>
+      </div>
+    </section>
+    <section class="section demos-section generalization-section" id="generalization" aria-labelledby="generalization-title">
+      <div class="container">
+        <div class="section-head light reveal"><div><p class="eyebrow">05 / Generalization Test</p><h2 id="generalization-title">Page turning under<br>changing illumination.</h2></div><p>A separate demonstration of the page-turning task with colored lighting interference, shown with synchronized views and tactile feedback.</p></div>
+        <figure class="demo-stage reveal">
+          <video id="generalization-demo" class="demo-player" controls muted loop playsinline preload="metadata" poster="static/images/multiview-v30/book2.jpg" aria-describedby="generalization-description generalization-speed" aria-label="Generalization Test: page turning under changing illumination"><source src="static/videos/multiview-v30/book2.mp4" type="video/mp4"></video>
+          <figcaption class="demo-caption"><div><p class="task-eyebrow">Lighting interference / Flip Page</p><h3>Generalization Test</h3><p id="generalization-description">The robot separates and turns a page while colored lights change the scene’s appearance. The external, agent, and wrist views show the visual disturbance alongside the recorded fingertip tactile response.</p></div></figcaption>
+          <span class="sr-only" id="generalization-speed">Playback speed: 1× real time.</span>
+        </figure>
       </div>
     </section>
     <section class="section tinted" id="results">
       <div class="container">
-        <div class="section-head reveal"><div><p class="eyebrow">05 / Results</p><h2>Human touch changes<br>what the policy can learn.</h2></div><p>UVTA outperforms the strongest visual-tactile baseline by 41 points on average, while future-tactile prediction contributes a 28-point gain over its ablation.</p></div>
+        <div class="section-head reveal"><div><p class="eyebrow">06 / Results</p><h2>Human touch changes<br>what the policy can learn.</h2></div><p>UVTA outperforms the strongest visual-tactile baseline by 41 points on average, while future-tactile prediction contributes a 28-point gain over its ablation.</p></div>
         <div class="results-layout"><div class="result-table-wrap reveal"><table><thead><tr><th>Method</th><th>Flip</th><th>Bulb</th><th>Switch</th><th>Ball</th><th>Liquid</th><th>Avg.</th></tr></thead><tbody><tr><td>ViTacFormer</td><td>0</td><td>4</td><td>0</td><td>0</td><td>0</td><td>1</td></tr><tr><td>RDP</td><td>10</td><td>20</td><td>20</td><td>18</td><td>0</td><td>14</td></tr><tr><td>T-Rex</td><td>43</td><td>26</td><td>24</td><td>36</td><td>15</td><td>29</td></tr><tr class="ours"><td>UVTA</td><td>83</td><td>80</td><td>88</td><td>56</td><td>44</td><td>70</td></tr></tbody></table></div><div class="result-callouts reveal"><div><strong>+41</strong><span>points over the strongest baseline</span></div><div><strong>+28</strong><span>points from future-tactile prediction</span></div><div><strong>84%</strong><span>average on the three scaling tasks at 1,000 human demos</span></div></div></div>
         <figure class="scaling reveal"><img src="static/images/scaling.png" alt="Task score improves as the number of human tactile trajectories increases"><figcaption>Performance continues to increase with additional human tactile trajectories and does not saturate at 1,000 demonstrations.</figcaption></figure>
       </div>
     </section>
     <section class="section chapter outlook" id="outlook" aria-labelledby="outlook-title">
       <div class="container chapter-inner">
-        <div class="chapter-heading reveal"><p class="eyebrow">06 / Limitations and Future Work</p><span class="chapter-topic">The next scale of contact learning</span></div>
+        <div class="chapter-heading reveal"><p class="eyebrow">07 / Limitations and Future Work</p><span class="chapter-topic">The next scale of contact learning</span></div>
         <h2 class="reveal" id="outlook-title">A step toward scalable tactile learning.<br><span class="accent">Not yet its limit.</span></h2>
         <div class="outlook-grid">
           <article class="reveal"><span class="outlook-number">01</span><h3>Fingertip-only sensing</h3><p>Our current system measures touch only at the fingertips. It does not capture contact across the palm or the rest of the hand.</p><div class="next-step"><span>Future direction</span><p>Extend tactile coverage to richer, whole-hand interactions.</p></div></article>
@@ -127,6 +137,6 @@
     </section>
   </main>
   <footer><div class="container"><span>UVTA · Unified Visual-Tactile-Action Modeling</span><span>Built for research communication · 2026</span></div></footer>
-  <script src="static/js/main-v29.js"></script>
+  <script src="static/js/main-v30.js"></script>
 </body>
 </html>
