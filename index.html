@@ -16,8 +16,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="static/css/style.css">
-  <link rel="stylesheet" href="static/css/overview-video.css">
+  <link rel="stylesheet" href="static/css/editorial-v29.css">
 </head>
 <body>
   <div class="progress" aria-hidden="true"><span id="progressBar"></span></div>
@@ -25,7 +24,7 @@
     <div class="nav-inner">
       <a class="brand" href="#top" aria-label="UVTA home"><span class="brand-mark"><i></i><i></i><i></i></span><span>UVTA</span></a>
       <nav class="nav-links" id="navLinks" aria-label="Page sections">
-        <a href="#overview">Overview</a><a href="#system">Data</a><a href="#method">Method</a><a href="#video">Demos</a><a href="#results">Results</a><a href="#citation">Citation</a>
+        <a href="#overview">Overview</a><a href="#motivation">Motivation</a><a href="#system">System &amp; Dataset</a><a href="#method">Model</a><a href="#video">Demos</a><a href="#results">Results</a><a href="#outlook">Outlook</a>
       </nav>
       <a class="nav-github" href="https://github.com/uni-vta/uni-vta.github.io" target="_blank" rel="noopener">GitHub</a>
       <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation" aria-expanded="false"><span></span><span></span></button>
@@ -46,50 +45,81 @@
         </div>
         <figure class="hero-figure overview-video reveal" id="overview">
           <video controls playsinline preload="metadata" poster="static/images/overview-poster-v6.jpg" aria-label="UVTA project overview video">
-            <source src="static/videos/uvta-overview-v28.mp4" type="video/mp4">
+            <source src="static/videos/uvta-overview-v29.mp4" type="video/mp4">
             Your browser does not support embedded MP4 video.
           </video>
         </figure>
       </div>
     </section>
-    <section class="section" id="motivation">
-      <div class="container narrow">
-        <p class="eyebrow reveal">Motivation</p><h2 class="reveal">Scale the interaction, not the embodiment.</h2>
-        <p class="lead reveal">Tactile feedback is essential for contact-rich dexterity, yet robot tactile demonstrations are expensive to collect at scale. UVTA uses wearable human tactile motion capture to gather diverse physical interactions, then learns a shared representation that connects human contact experience to robot action.</p>
-        <div class="idea-grid"><article class="idea reveal"><span>01</span><h3>Capture</h3><p>Record wrist-centric vision, fingertip pressure, and hand motion without placing a robot in the collection loop.</p></article><article class="idea reveal"><span>02</span><h3>Align</h3><p>Map human and robot trajectories into common tactile and action spaces across different hand embodiments.</p></article><article class="idea reveal"><span>03</span><h3>Co-train</h3><p>Jointly predict future actions and tactile trajectories so human touch supervises contact-aware representation learning.</p></article></div>
+    <section class="section chapter" id="motivation" aria-labelledby="motivation-title">
+      <div class="container chapter-inner">
+        <div class="chapter-heading reveal"><p class="eyebrow">01 / Motivation</p><span class="chapter-topic">Learning across embodiments</span></div>
+        <div class="motivation-layout">
+          <div class="motivation-copy reveal">
+            <h2 id="motivation-title">Hands can change.<span class="accent">The physics of interaction does not.</span></h2>
+            <p class="lead">Dexterous manipulation needs touch. Collecting tactile demonstrations on robot hands, however, is difficult to scale.</p>
+            <p>Human interaction offers a scalable source of contact experience. UVTA combines diverse human tactile demonstrations with a smaller set of robot demonstrations to learn a shared visual–tactile–action representation.</p>
+            <div class="takeaway"><span>The key idea</span><p>Scale human contact experience to learn contact-aware robot manipulation.</p></div>
+          </div>
+          <figure class="motivation-figure reveal"><img src="static/images/teaser.jpg" alt="Human and robot hands share interaction patterns that support learning a contact-aware policy"><figcaption>Different hands. Shared contact physics.</figcaption></figure>
+        </div>
       </div>
     </section>
-    <section class="section tinted" id="system">
-      <div class="container">
-        <div class="section-head reveal"><div><p class="eyebrow">System &amp; dataset</p><h2>Human tactile data at scale</h2></div><p>Our wearable system synchronizes a passive 22-DoF hand exoskeleton, fingertip force-sensing resistors, a VIVE tracker, and wrist-mounted RGB vision.</p></div>
-        <figure class="paper-figure reveal"><img src="static/images/system.jpg" alt="UVTA tactile motion-capture system"><figcaption>Tactile motion capture aligns human wrist motion, hand articulation, vision, and touch with the robot representation.</figcaption></figure>
-        <div class="dataset-row"><figure class="paper-figure reveal"><img src="static/images/dataset.jpg" alt="Robot and human data collection settings"><figcaption>Robot data provides executable action supervision; human data contributes diverse scenes, objects, and contact patterns.</figcaption></figure><div class="dataset-copy reveal"><p class="eyebrow">UVTA dataset</p><h3>Two complementary data sources</h3><p>Each task combines <strong>1,000 diverse human demonstrations</strong> with <strong>150 robot demonstrations</strong>. Human interactions expand contact diversity, while robot trajectories ground the learned policy in the target embodiment.</p><div class="dataset-pills"><span>Wrist RGB</span><span>20-D touch</span><span>31-D action</span><span>30 Hz</span></div></div></div>
+    <section class="section chapter tinted" id="system" aria-labelledby="system-title">
+      <div class="container chapter-inner">
+        <div class="chapter-heading reveal"><p class="eyebrow">02 / System and Dataset</p><span class="chapter-topic">From human interaction to training data</span></div>
+        <div class="section-head reveal"><h2 id="system-title">Capture touch.<br>Collect diverse interactions.</h2><p>A passive 22-DoF exoskeleton synchronizes hand motion, fingertip pressure, wrist pose, and wrist-mounted RGB vision.</p></div>
+        <figure class="paper-figure system-figure reveal"><img src="static/images/system.jpg" alt="Tactile exoskeleton with fingertip pressure sensors, VIVE wrist tracker, and wrist-mounted RGB camera"></figure>
+        <div class="dataset-strip reveal">
+          <figure><img src="static/images/dataset.jpg" alt="Human demonstrations provide more diverse scenes than robot teleoperation"></figure>
+          <div><h3>Two complementary data sources</h3><p>Human demonstrations broaden contact diversity. Robot demonstrations provide executable action supervision.</p><div class="dataset-counts"><div><strong>1,000</strong><span>human demonstrations / task</span></div><div><strong>150</strong><span>robot demonstrations / task</span></div></div></div>
+          <div class="dataset-modalities"><span>Wrist RGB</span><span>20-D touch</span><span>31-D action</span><span>30 Hz</span></div>
+        </div>
       </div>
     </section>
-    <section class="section" id="method">
-      <div class="container">
-        <div class="section-head reveal"><div><p class="eyebrow">Method</p><h2>One interaction representation, two predictions</h2></div><p>UVTA fuses a 384-D visual token with a 20-D tactile token and supervises the shared representation through both action diffusion and future-tactile prediction.</p></div>
-        <figure class="paper-figure method-figure reveal"><img src="static/images/method.jpg" alt="Unified Visual-Tactile-Action model architecture"></figure>
-        <div class="method-notes"><article class="reveal"><b>404-D interaction token</b><p>Early fusion connects wrist vision with contact measurements before downstream prediction.</p></article><article class="reveal"><b>Diffusion action head</b><p>Generates a 16-step chunk of relative wrist and absolute finger-joint actions.</p></article><article class="reveal"><b>Tactile world head</b><p>Predicts the complete future tactile trajectory and shapes the shared encoder with physical consequences.</p></article></div>
+    <section class="section chapter" id="method" aria-labelledby="model-title">
+      <div class="container chapter-inner">
+        <div class="chapter-heading reveal"><p class="eyebrow">03 / Model</p><span class="chapter-topic">Unified Visual–Tactile–Action Modeling</span></div>
+        <div class="section-head reveal"><h2 id="model-title">One interaction representation.<br>Two complementary predictions.</h2><p>A 384-D visual token and a 20-D tactile token form a shared representation, trained through action diffusion and future-tactile prediction.</p></div>
+        <div class="model-layout"><figure class="paper-figure method-figure reveal"><img src="static/images/method.jpg" alt="Unified Visual-Tactile-Action model architecture"></figure>
+        <div class="method-notes"><article class="reveal"><span>01 / Fuse</span><h3>404-D interaction token</h3><p>Connect wrist vision with contact measurements in a shared representation.</p></article><article class="reveal"><span>02 / Act</span><h3>Diffusion action head</h3><p>Generate 16-step chunks of relative wrist and absolute finger-joint actions.</p></article><article class="reveal"><span>03 / Anticipate</span><h3>Tactile world head</h3><p>Predict future touch to supervise contact-aware representation learning.</p></article></div></div>
       </div>
     </section>
     <section class="section demos-section" id="video">
       <div class="container">
-        <div class="section-head light reveal"><div><p class="eyebrow">Real-robot demos</p><h2>Contact-aware dexterity across five tasks</h2></div><p>Each clip shows autonomous policy execution from the agent view. Videos play automatically when they enter the viewport.</p></div>
-        <div class="demo-grid">
-          <article class="demo-card featured reveal"><div class="video-wrap"><video class="scroll-video" poster="static/images/posters/flip-page.jpg" muted loop playsinline preload="metadata"><source src="static/videos/flip-page.mp4" type="video/mp4"></video><span class="play-mark">▶</span></div><div class="demo-caption"><span>01</span><div><h3>Flip Page</h3><p>Rub, separate, and turn a single page.</p></div><b>83</b></div></article>
-          <article class="demo-card reveal"><div class="video-wrap"><video class="scroll-video" poster="static/images/posters/light-bulb.jpg" muted loop playsinline preload="metadata"><source src="static/videos/light-bulb.mp4" type="video/mp4"></video><span class="play-mark">▶</span></div><div class="demo-caption"><span>02</span><div><h3>Screw Light Bulb</h3><p>Coordinate wrist rotation and fingertip contact.</p></div><b>80</b></div></article>
-          <article class="demo-card reveal"><div class="video-wrap"><video class="scroll-video" poster="static/images/posters/toggle-switch.jpg" muted loop playsinline preload="metadata"><source src="static/videos/toggle-switch.mp4" type="video/mp4"></video><span class="play-mark">▶</span></div><div class="demo-caption"><span>03</span><div><h3>Toggle Switch</h3><p>Stabilize the breaker and actuate the switch.</p></div><b>88</b></div></article>
-          <article class="demo-card reveal"><div class="video-wrap"><video class="scroll-video" poster="static/images/posters/ball-classification.jpg" muted loop playsinline preload="metadata"><source src="static/videos/ball-classification.mp4" type="video/mp4"></video><span class="play-mark">▶</span></div><div class="demo-caption"><span>04</span><div><h3>Ball Classification</h3><p>Distinguish visually similar materials through touch.</p></div><b>56</b></div></article>
-          <article class="demo-card reveal"><div class="video-wrap"><video class="scroll-video" poster="static/images/posters/liquid-transfer.jpg" muted loop playsinline preload="metadata"><source src="static/videos/liquid-transfer.mp4" type="video/mp4"></video><span class="play-mark">▶</span></div><div class="demo-caption"><span>05</span><div><h3>Liquid Transfer</h3><p>Draw, move, and dispense liquid with a dropper.</p></div><b>44</b></div></article>
-        </div><p class="score-note reveal">Numbers denote the stage-wise task score (%) reported in the paper.</p>
+        <div class="section-head light reveal"><div><p class="eyebrow">04 / Real-robot demonstrations</p><h2>See the action.<br>See the contact.</h2></div><p>Synchronized external, agent, and wrist views with recorded fingertip tactile visualizations. Select a task to inspect the interaction in detail.</p></div>
+        <div class="demo-tabs reveal" role="tablist" aria-label="Robot task demonstrations">
+          <button id="tab-book1" role="tab" aria-selected="true" aria-controls="demo-panel" data-demo="book1">Flip Page</button>
+          <button id="tab-light" role="tab" aria-selected="false" aria-controls="demo-panel" tabindex="-1" data-demo="light">Light Bulb</button>
+          <button id="tab-switch" role="tab" aria-selected="false" aria-controls="demo-panel" tabindex="-1" data-demo="switch">Switch</button>
+          <button id="tab-tube" role="tab" aria-selected="false" aria-controls="demo-panel" tabindex="-1" data-demo="tube">Liquid Transfer</button>
+          <button id="tab-ball_hard" role="tab" aria-selected="false" aria-controls="demo-panel" tabindex="-1" data-demo="ball_hard">Hard Ball</button>
+          <button id="tab-ball_soft" role="tab" aria-selected="false" aria-controls="demo-panel" tabindex="-1" data-demo="ball_soft">Soft Ball</button>
+          <button id="tab-book2" role="tab" aria-selected="false" aria-controls="demo-panel" tabindex="-1" data-demo="book2">Generalization Test</button>
+        </div>
+        <div class="demo-stage reveal" id="demo-panel" role="tabpanel" aria-labelledby="tab-book1">
+          <video id="multiview-demo" controls muted loop playsinline preload="metadata" poster="static/images/multiview/book1.jpg" aria-label="Flip Page: synchronized robot views and tactile visualization"><source src="static/videos/multiview/book1.mp4" type="video/mp4"></video>
+          <div class="demo-caption"><div><h3 id="demo-title">Flip Page</h3><p id="demo-description">Rub, separate, and turn a single page.</p></div><span class="playback-note" id="demo-speed">1× real-time duration</span></div>
+        </div>
+        <p class="demo-footnote">Touch panels show recorded sensor visualizations, not generated signals. Playback speed is indicated for each clip.</p>
       </div>
     </section>
     <section class="section tinted" id="results">
       <div class="container">
-        <div class="section-head reveal"><div><p class="eyebrow">Results</p><h2>Human touch changes what the policy can learn</h2></div><p>UVTA outperforms the strongest visual-tactile baseline by 41 points on average, while future-tactile prediction contributes a 28-point gain over its ablation.</p></div>
+        <div class="section-head reveal"><div><p class="eyebrow">05 / Results</p><h2>Human touch changes<br>what the policy can learn.</h2></div><p>UVTA outperforms the strongest visual-tactile baseline by 41 points on average, while future-tactile prediction contributes a 28-point gain over its ablation.</p></div>
         <div class="results-layout"><div class="result-table-wrap reveal"><table><thead><tr><th>Method</th><th>Flip</th><th>Bulb</th><th>Switch</th><th>Ball</th><th>Liquid</th><th>Avg.</th></tr></thead><tbody><tr><td>ViTacFormer</td><td>0</td><td>4</td><td>0</td><td>0</td><td>0</td><td>1</td></tr><tr><td>RDP</td><td>10</td><td>20</td><td>20</td><td>18</td><td>0</td><td>14</td></tr><tr><td>T-Rex</td><td>43</td><td>26</td><td>24</td><td>36</td><td>15</td><td>29</td></tr><tr class="ours"><td>UVTA</td><td>83</td><td>80</td><td>88</td><td>56</td><td>44</td><td>70</td></tr></tbody></table></div><div class="result-callouts reveal"><div><strong>+41</strong><span>points over the strongest baseline</span></div><div><strong>+28</strong><span>points from future-tactile prediction</span></div><div><strong>84%</strong><span>average on the three scaling tasks at 1,000 human demos</span></div></div></div>
         <figure class="scaling reveal"><img src="static/images/scaling.png" alt="Task score improves as the number of human tactile trajectories increases"><figcaption>Performance continues to increase with additional human tactile trajectories and does not saturate at 1,000 demonstrations.</figcaption></figure>
+      </div>
+    </section>
+    <section class="section chapter outlook" id="outlook" aria-labelledby="outlook-title">
+      <div class="container chapter-inner">
+        <div class="chapter-heading reveal"><p class="eyebrow">06 / Limitations and Future Work</p><span class="chapter-topic">The next scale of contact learning</span></div>
+        <h2 class="reveal" id="outlook-title">A step toward scalable tactile learning.<br><span class="accent">Not yet its limit.</span></h2>
+        <div class="outlook-grid">
+          <article class="reveal"><span class="outlook-number">01</span><h3>Fingertip-only sensing</h3><p>Our current system measures touch only at the fingertips. It does not capture contact across the palm or the rest of the hand.</p><div class="next-step"><span>Future direction</span><p>Extend tactile coverage to richer, whole-hand interactions.</p></div></article>
+          <article class="reveal"><span class="outlook-number">02</span><h3>Limited data and model scale</h3><p>We evaluate UVTA at a limited range of human-data volumes and model capacity. Its behavior at substantially larger scales remains untested.</p><div class="next-step"><span>Future direction</span><p>Scale up human interaction datasets and model capacity, and systematically study the resulting performance and generalization.</p></div></article>
+        </div>
+        <p class="outlook-closing reveal">Broader touch. More human experience. Larger models.</p>
       </div>
     </section>
     <section class="section citation" id="citation">
@@ -97,6 +127,6 @@
     </section>
   </main>
   <footer><div class="container"><span>UVTA · Unified Visual-Tactile-Action Modeling</span><span>Built for research communication · 2026</span></div></footer>
-  <script src="static/js/main.js"></script>
+  <script src="static/js/main-v29.js"></script>
 </body>
 </html>
