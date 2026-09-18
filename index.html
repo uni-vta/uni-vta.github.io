@@ -16,7 +16,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="static/css/editorial-v30.css">
+  <link rel="stylesheet" href="static/css/editorial-v31.css">
 </head>
 <body>
   <div class="progress" aria-hidden="true"><span id="progressBar"></span></div>
@@ -72,8 +72,9 @@
         <figure class="paper-figure system-figure reveal"><img src="static/images/system.jpg" alt="Tactile exoskeleton with fingertip pressure sensors, VIVE wrist tracker, and wrist-mounted RGB camera"></figure>
         <div class="dataset-strip reveal">
           <figure><img src="static/images/dataset.jpg" alt="Human demonstrations provide more diverse scenes than robot teleoperation"></figure>
-          <div><h3>Two complementary data sources</h3><p>Human demonstrations broaden contact diversity. Robot demonstrations provide executable action supervision.</p><div class="dataset-counts"><div><strong>1,000</strong><span>human demonstrations / task</span></div><div><strong>150</strong><span>robot demonstrations / task</span></div></div></div>
-          <div class="dataset-modalities"><span>Wrist RGB</span><span>20-D touch</span><span>31-D action</span><span>30 Hz</span></div>
+          <div class="dataset-copy"><h3>Two complementary data sources</h3><p>Human demonstrations broaden contact diversity. Robot demonstrations provide executable action supervision.</p><div class="dataset-counts"><div><strong>1,000</strong><span>human demonstrations / task</span></div><div><strong>150</strong><span>robot demonstrations / task</span></div></div>
+            <div class="dataset-modalities"><span>Wrist RGB</span><span>20-D touch</span><span>31-D action</span><span>30 Hz</span></div>
+          </div>
         </div>
       </div>
     </section>
@@ -87,7 +88,7 @@
     </section>
     <section class="section demos-section" id="video">
       <div class="container">
-        <div class="section-head light reveal"><div><p class="eyebrow">04 / Real-robot demonstrations</p><h2>See the action.<br>See the contact.</h2></div><p>Synchronized external, agent, and wrist views with recorded fingertip tactile visualizations. Select a task to inspect the interaction in detail.</p></div>
+        <div class="section-head demos-heading light reveal"><div><p class="eyebrow">04 / Real-robot demonstrations</p><h2>See the action.<br>See the contact.</h2></div></div>
         <div class="demo-tabs reveal" role="tablist" aria-label="Robot task demonstrations">
           <button id="tab-book1" role="tab" aria-selected="true" aria-controls="demo-panel" data-demo="book1">Flip Page</button>
           <button id="tab-light" role="tab" aria-selected="false" aria-controls="demo-panel" tabindex="-1" data-demo="light">Light Bulb</button>
@@ -97,19 +98,19 @@
           <button id="tab-ball_soft" role="tab" aria-selected="false" aria-controls="demo-panel" tabindex="-1" data-demo="ball_soft">Soft Ball</button>
         </div>
         <div class="demo-stage reveal" id="demo-panel" role="tabpanel" aria-labelledby="tab-book1">
-          <video id="multiview-demo" class="demo-player" controls muted loop playsinline preload="metadata" poster="static/images/multiview-v30/book1.jpg" aria-describedby="demo-description demo-speed" aria-label="Flip Page: synchronized robot views and tactile visualization"><source src="static/videos/multiview-v30/book1.mp4" type="video/mp4"></video>
+          <video id="multiview-demo" class="demo-player" controls muted loop playsinline preload="metadata" poster="static/images/multiview-v31/book1.jpg" aria-describedby="demo-description demo-speed" aria-label="Flip Page: synchronized robot views and tactile visualization"><source src="static/videos/multiview-v31/book1.mp4" type="video/mp4"></video>
           <div class="demo-caption" aria-live="polite" aria-atomic="true"><div><p class="task-eyebrow" id="demo-task">Task I / Page separation and turning</p><h3 id="demo-title">Flip Page</h3><p id="demo-description">The robot approaches the book, slows down near the page, and coordinates its fingers to rub and separate a single page before turning it to the left.</p></div></div>
           <span class="sr-only" id="demo-speed">Playback speed: 1× real time.</span>
         </div>
-        <p class="demo-footnote">Task descriptions follow the paper’s experimental setup. Touch panels show recorded sensor visualizations. Playback speed appears at the top right of each video.</p>
+        <p class="demo-footnote">Task descriptions follow the paper’s experimental setup. Touch panels show recorded sensor visualizations. Playback speed appears at the top right of the external view.</p>
       </div>
     </section>
     <section class="section demos-section generalization-section" id="generalization" aria-labelledby="generalization-title">
       <div class="container">
         <div class="section-head light reveal"><div><p class="eyebrow">05 / Generalization Test</p><h2 id="generalization-title">Page turning under<br>changing illumination.</h2></div><p>A separate demonstration of the page-turning task with colored lighting interference, shown with synchronized views and tactile feedback.</p></div>
         <figure class="demo-stage reveal">
-          <video id="generalization-demo" class="demo-player" controls muted loop playsinline preload="metadata" poster="static/images/multiview-v30/book2.jpg" aria-describedby="generalization-description generalization-speed" aria-label="Generalization Test: page turning under changing illumination"><source src="static/videos/multiview-v30/book2.mp4" type="video/mp4"></video>
-          <figcaption class="demo-caption"><div><p class="task-eyebrow">Lighting interference / Flip Page</p><h3>Generalization Test</h3><p id="generalization-description">The robot separates and turns a page while colored lights change the scene’s appearance. The external, agent, and wrist views show the visual disturbance alongside the recorded fingertip tactile response.</p></div></figcaption>
+          <video id="generalization-demo" class="demo-player" controls muted loop playsinline preload="metadata" poster="static/images/multiview-v31/book2.jpg" aria-describedby="generalization-description generalization-speed" aria-label="Generalization Test: page turning under changing illumination"><source src="static/videos/multiview-v31/book2.mp4" type="video/mp4"></video>
+          <figcaption class="demo-caption"><div><p class="task-eyebrow">Lighting interference / Flip Page</p><h3>Generalization Test</h3><p id="generalization-description">The robot separates and turns a page while colored lights change the scene’s appearance. By relying on tactile feedback, the robot continues to complete the task reliably despite visual interference.</p></div></figcaption>
           <span class="sr-only" id="generalization-speed">Playback speed: 1× real time.</span>
         </figure>
       </div>
@@ -137,6 +138,6 @@
     </section>
   </main>
   <footer><div class="container"><span>UVTA · Unified Visual-Tactile-Action Modeling</span><span>Built for research communication · 2026</span></div></footer>
-  <script src="static/js/main-v30.js"></script>
+  <script src="static/js/main-v31.js"></script>
 </body>
 </html>
