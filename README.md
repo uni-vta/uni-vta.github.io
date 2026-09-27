@@ -8,6 +8,8 @@ Live site: <https://uni-vta.github.io/>
 
 Demo section: <https://uni-vta.github.io/#video>
 
+Codebase: <https://github.com/uni-vta/UVTA>
+
 ## Local preview
 
 ```bash
@@ -16,4 +18,4 @@ python3 -m http.server 8000
 
 Then open <http://localhost:8000>.
 
-Paper, dataset, and code links are intentionally marked as coming soon until their public release.
+The navigation GitHub link and the opening Code button point to the codebase above. The code repository is currently private; visitors need repository access until it is made public. Paper and dataset links remain pending public release.
