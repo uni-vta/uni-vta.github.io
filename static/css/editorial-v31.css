@@ -49,6 +49,8 @@ a:focus-visible, button:focus-visible, video:focus-visible { outline: 3px solid 
 .hero h1 { max-width: 1380px; margin: 18px auto; font-weight: 800; font-size: clamp(34px, 4vw, 64px); line-height: 1.13; letter-spacing: -.035em; }
 .hero-lead { font-size: 23px; color: var(--accent); }
 .authors { color: var(--muted); font-size: 16px; margin: 18px auto 0; max-width: 1160px; }
+.authors a { color: var(--blue); white-space: nowrap; text-decoration: underline; text-decoration-color: rgb(56 102 135 / 45%); text-underline-offset: 3px; }
+.authors a:hover, .authors a:focus-visible { color: var(--accent); text-decoration-color: currentColor; }
 .hero-actions { display: flex; justify-content: center; gap: 10px; flex-wrap: wrap; margin: 20px 0 30px; }
 .button { display: inline-flex; align-items: center; gap: 8px; border: 1px solid var(--line); padding: 10px 18px; border-radius: 6px; font-size: 15px; font-weight: 600; background: #fff; }
 .button svg { width: 15px; height: 15px; fill: currentColor; }
