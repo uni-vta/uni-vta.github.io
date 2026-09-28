@@ -54,7 +54,8 @@ a:focus-visible, button:focus-visible, video:focus-visible { outline: 3px solid 
 .hero-wordmark .brand-mark i:nth-child(3) { height: 46px; background: var(--hero-accent); }
 .hero h1 { max-width: 1250px; margin: 22px auto 18px; color: #333; font-weight: 800; font-size: clamp(34px, 3.5vw, 52px); line-height: 1.18; letter-spacing: -.025em; }
 .hero-lead { font-size: 23px; color: #5d6063; }
-.authors { display: grid; grid-template-columns: repeat(4, max-content); justify-content: center; align-items: baseline; column-gap: clamp(24px, 3vw, 48px); row-gap: 8px; width: fit-content; max-width: 100%; margin: 26px auto 0; color: var(--hero-accent); font-size: clamp(20px, 1.8vw, 25px); font-weight: 500; line-height: 1.65; }
+.authors { display: grid; justify-content: center; align-items: baseline; row-gap: 8px; width: fit-content; max-width: 100%; margin: 26px auto 0; color: var(--hero-accent); font-size: clamp(20px, 1.8vw, 25px); font-weight: 500; line-height: 1.65; }
+.author-row { display: flex; justify-content: center; align-items: baseline; gap: clamp(24px, 3vw, 48px); }
 .author-item { white-space: nowrap; }
 .author-separator { display: none; }
 .authors a { color: inherit; white-space: nowrap; text-decoration: underline; text-decoration-thickness: 1px; text-decoration-color: rgb(196 81 11 / 30%); text-underline-offset: 5px; transition: color .18s ease, text-decoration-color .18s ease; }
@@ -204,6 +205,7 @@ footer .container { display: flex; justify-content: space-between; gap: 20px; }
   .hero-wordmark .brand-mark { transform: scale(.8); transform-origin: right center; }
   .hero-lead { font-size: 18px; }
   .authors { grid-template-columns: repeat(2, max-content); column-gap: 32px; row-gap: 7px; margin-top: 22px; font-size: 19px; line-height: 1.6; }
+  .author-row { display: contents; }
   .hero-affiliations { gap: 26px; flex-wrap: wrap; }
   .hero-affiliations .affiliation-bigai { width: 220px; }
   .hero-affiliations .affiliation-sharpa { width: 150px; }
