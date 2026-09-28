@@ -6,6 +6,9 @@ The site is static and deploys directly with GitHub Pages from the repository ro
 
 Live site: <https://uni-vta.github.io/>
 
+Overview video (MP4, 1080p): <https://uni-vta.github.io/static/videos/uvta-overview-v34.mp4>
+Use the **Download video** button below the homepage player to save the full video.
+
 Demo section: <https://uni-vta.github.io/#video>
 
 Codebase: <https://github.com/uni-vta/UVTA>
