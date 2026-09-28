@@ -16,7 +16,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="static/css/editorial-v31.css?v=author-links-1">
+  <link rel="stylesheet" href="static/css/editorial-v31.css?v=hero-humanego-1">
 </head>
 <body>
   <div class="progress" aria-hidden="true"><span id="progressBar"></span></div>
@@ -34,14 +34,28 @@
     <section class="hero">
       <div class="orb orb-a"></div><div class="orb orb-b"></div>
       <div class="container hero-copy">
-        <p class="kicker reveal">Dexterous manipulation from scalable human touch</p>
+        <div class="hero-wordmark reveal" aria-label="UVTA"><span class="brand-mark" aria-hidden="true"><i></i><i></i><i></i></span><span>UV<span class="wordmark-accent">TA</span></span></div>
         <h1 class="reveal">Unified Visual-Tactile-Action Modeling from Human Demonstrations</h1>
         <p class="hero-lead reveal">Hands can change. The physics of interaction does not.</p>
-        <p class="authors reveal"><a href="https://github.com/Chopper-233" target="_blank" rel="noopener noreferrer" title="Wenqiao Li's personal website">Wenqiao Li</a> · Qianyou Zhao · Jiawen Hao · Xuezhou Zhu · <a href="https://tengyu.ai/" target="_blank" rel="noopener noreferrer" title="Tengyu Liu's personal website">Tengyu Liu</a> · Kaifeng Zhang · <a href="https://alvinwen428.github.io/" target="_blank" rel="noopener noreferrer" title="Chuan Wen's personal website">Chuan Wen</a> · <a href="https://siyuanhuang.com/" target="_blank" rel="noopener noreferrer" title="Siyuan Huang's personal website">Siyuan Huang</a></p>
+        <p class="authors reveal" aria-label="Authors">
+          <span class="author-item"><a href="https://github.com/Chopper-233" target="_blank" rel="noopener noreferrer" title="Wenqiao Li's personal website">Wenqiao Li</a></span><span class="author-separator" aria-hidden="true"> · </span>
+          <span class="author-item">Qianyou Zhao</span><span class="author-separator" aria-hidden="true"> · </span>
+          <span class="author-item">Jiawen Hao</span><span class="author-separator" aria-hidden="true"> · </span>
+          <span class="author-item">Xuezhou Zhu</span><span class="author-separator" aria-hidden="true"> · </span>
+          <span class="author-item"><a href="https://tengyu.ai/" target="_blank" rel="noopener noreferrer" title="Tengyu Liu's personal website">Tengyu Liu</a></span><span class="author-separator" aria-hidden="true"> · </span>
+          <span class="author-item">Kaifeng Zhang</span><span class="author-separator" aria-hidden="true"> · </span>
+          <span class="author-item"><a href="https://alvinwen428.github.io/" target="_blank" rel="noopener noreferrer" title="Chuan Wen's personal website">Chuan Wen</a></span><span class="author-separator" aria-hidden="true"> · </span>
+          <span class="author-item"><a href="https://siyuanhuang.com/" target="_blank" rel="noopener noreferrer" title="Siyuan Huang's personal website">Siyuan Huang</a></span>
+        </p>
+        <div class="hero-affiliations reveal" aria-label="Participating institutions">
+          <img class="affiliation-bigai" src="static/images/affiliations/bigai.png" alt="Beijing Institute for General Artificial Intelligence" width="960" height="256">
+          <img class="affiliation-sharpa" src="static/images/affiliations/sharpa.png" alt="Sharpa" width="1484" height="306">
+          <div class="affiliation-sjtu"><img src="static/images/affiliations/sjtu.png" alt="Shanghai Jiao Tong University" width="600" height="600"><span>School of Artificial Intelligence<br>Shanghai Jiao Tong University</span></div>
+        </div>
         <div class="hero-actions reveal">
-          <span class="button disabled" title="The paper will be linked after public release">Paper · Coming soon</span>
+          <span class="button disabled" aria-disabled="true" title="The paper will be linked after public release"><svg class="outline-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M14 3H6a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9l-6-6Z"/><path d="M14 3v6h6M8 13h8M8 17h6"/></svg><span>Paper</span><span class="button-note">Coming soon</span></span>
           <a class="button secondary" href="https://github.com/uni-vta/UVTA" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 .7A11.3 11.3 0 0 0 8.4 22.8c.6.1.8-.2.8-.6v-2.1c-3.4.7-4.1-1.4-4.1-1.4-.5-1.4-1.3-1.7-1.3-1.7-1.1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1 1.8 2.7 1.3 3.4 1 .1-.8.4-1.3.7-1.6-2.7-.3-5.5-1.3-5.5-5.6 0-1.3.5-2.3 1.2-3.1-.1-.3-.5-1.6.1-3.1 0 0 1-.3 3.1 1.2a10.7 10.7 0 0 1 5.7 0C16.1 5 17.1 5.3 17.1 5.3c.6 1.5.2 2.8.1 3.1.7.8 1.2 1.8 1.2 3.1 0 4.3-2.8 5.3-5.5 5.6.4.4.8 1.1.8 2.1v3c0 .4.2.7.8.6A11.3 11.3 0 0 0 12 .7Z"/></svg>Code</a>
-          <a class="button ghost" href="#video">Watch demos <span>↓</span></a>
+          <a class="button ghost" href="#video"><svg class="outline-icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="m10 8 6 4-6 4V8Z"/></svg>Watch demos <span aria-hidden="true">↓</span></a>
         </div>
         <figure class="hero-figure overview-video reveal" id="overview">
           <video controls playsinline preload="metadata" poster="static/images/overview-poster-v6.jpg" aria-label="UVTA project overview video">
