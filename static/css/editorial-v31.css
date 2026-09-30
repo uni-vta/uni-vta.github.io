@@ -118,6 +118,8 @@ figcaption { color: var(--muted); font-size: 16px; margin-top: 14px; line-height
 .dataset-counts span { color: var(--muted); font-size: 17px; line-height: 1.5; }
 .dataset-modalities { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 28px; font-size: 16px; font-weight: 500; color: var(--blue); }
 .dataset-modalities span { padding: 5px 12px; border: 1px solid #cddbe5; border-radius: 5px; background: #eaf0f5; }
+.dataset-link { display: inline-block; margin-top: 24px; color: var(--blue); font-size: 19px; font-weight: 600; text-decoration: underline; text-underline-offset: 4px; }
+.dataset-link:hover { color: var(--accent); }
 .model-layout { display: grid; grid-template-columns: minmax(0, 1fr) 310px; gap: 32px; align-items: center; }
 .method-figure img { height: clamp(350px, 53svh, 570px); object-fit: contain; }
 .method-notes { display: grid; grid-template-columns: 1fr; gap: 22px; }
@@ -230,7 +232,7 @@ footer .container { display: flex; justify-content: space-between; gap: 20px; }
   .hero-actions { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; max-width: 400px; margin: 24px auto; }
   .hero-actions .button { min-width: 0; min-height: 52px; padding: 12px 10px; gap: 7px; font-size: 17px; }
   .hero-actions .button.secondary { min-width: 0; }
-  .hero-actions .button.ghost { grid-column: 1 / -1; }
+  .hero-actions .button.ghost { grid-column: auto; }
   .hero-actions .button svg { width: 19px; height: 19px; }
   .button-note { font-size: 11px; padding: 4px 6px; }
   .authors { column-gap: 24px; font-size: 18px; }
@@ -261,6 +263,8 @@ footer .container { display: flex; justify-content: space-between; gap: 20px; }
   .hero-affiliations .affiliation-bigai { width: 150px; }
   .hero-affiliations .affiliation-sharpa { width: 100px; }
   .hero-actions .button { padding-inline: 8px; gap: 6px; font-size: 16px; }
+  .hero-actions .button.ghost { font-size: 14px; }
+  .hero-actions .button.ghost > span { display: none; }
   .hero-actions .button.disabled svg { display: none; }
 }
 @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } .hero-actions a.button, .authors a { transition: none; } .hero-actions a.button:hover { transform: none; } }

@@ -14,6 +14,8 @@ Demo section: <https://uni-vta.github.io/#video>
 
 Codebase: <https://github.com/uni-vta/UVTA>
 
+Dataset: <https://huggingface.co/datasets/Chopper233/UVTA>
+
 ## Local preview
 
 ```bash
@@ -22,4 +24,4 @@ python3 -m http.server 8000
 
 Then open <http://localhost:8000>.
 
-The navigation GitHub link and the opening Code button point to the codebase above. The code repository is currently private; visitors need repository access until it is made public. The opening Paper button links to arXiv. The dataset link remains pending public release.
+The navigation GitHub link and the opening Code button point to the codebase above. The code repository is currently private; visitors need repository access until it is made public. The opening Paper button links to arXiv. The Dataset button and System & Dataset section link to the public Hugging Face dataset.
